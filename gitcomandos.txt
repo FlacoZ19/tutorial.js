@@ -1,0 +1,57 @@
+Anclando un proyecto en GitHub
+
+git --version
+
+git init
+
+git status 
+
+//there are certain files that you do not want to place under source control so what you will do there is you will create a get ignore file.
+ create a file (gitignore)
+
+*.swp
+*.*~
+project.lock.json
+.DS_Store
+*.pyc
+
+# Visual Studio Code
+.vscode
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+msbuild.log
+msbuild.err
+msbuild.wrn
+
+# Visual Studio 2015
+.vs/
+
+///-------------------------///
+
+git add . 
+git status
+
+git commit -m "Anycanbe-mensage"
+git status 
+
+create a new reposistory (public) and copy the line that has the name of the new reposistory and paste like that
+
+git remote add origin https://github.com/FlacoZ19/tutorial.js.git
+
+git push -u origin master
