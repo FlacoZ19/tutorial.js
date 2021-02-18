@@ -741,3 +741,121 @@ function testLessEqual(){
 
 console.log(testLessEqual(10));
 
+/* 
+Comparisons with the
+Logical And Operator
+*/
+
+ function testLogicalAnd (valV){
+    if (valV <= 50 && valV >= 25){ // && == AND 
+         return "Yes";  
+    }
+    return "No";
+ }
+ testLogicalAnd(10);
+
+ /* 
+Comparisons with the
+Logical Or Operator
+*/
+
+function testLogicalOR (valVI){
+   if (vaVI < 10 || val > 20){ // || == Or 
+        return "Outside";  
+   }
+   return "inside";
+}
+testLogicalOr(15);
+
+/* 
+Else Statements
+*/
+
+function testElse(VII){
+   var result = "";
+
+   if (valVII > 5){
+      result = "Bigger than 5";
+   }
+
+   if (valVII <=5){
+      result = "5 or Smaller";
+   }
+   return "Between 5 and 10";
+}
+
+testElse(4);
+
+/*
+Else if
+Statements
+*/
+
+function testElseIf(VIII){ //  Multiple statements 
+   if (valVIII > 10){
+      return "Bigger than 5";
+   } else if (valVIII < 5){
+      return "5 or Smaller";
+   } else {
+      return "Between 5 and 10";
+   }
+}
+
+testElseIf(7);
+
+/* 
+Logical Order in
+If Else Statements 
+*/
+
+function orderMylogic(valIX){ //  Multiple statements 
+   if (valIX > 5){
+      return "Less than 5";
+   } else if (valIX < 10){
+      return "10 or Smaller";
+   } else {
+      return "Between 5 and 10";
+   }
+}
+
+console.log(orderMylogic(7));
+
+/* 
+Chaining 
+If Else Statements
+*/
+
+function testSize(num){
+   if (num < 5){
+      return "Tiny"
+   }
+   if (num < 10){
+      return "Small"
+   }
+   if (num < 15){
+      return "Medium"
+   }
+   if (num < 20){
+      return "Large"
+   }
+   if (num >= 20){
+      return "Huge"
+   }
+   return "Change me";
+}
+
+console.log(testSize(19));
+
+/* 
+Write chained if/else if statements to fulfill the following conditions
+ num < 5 - return "tiny"
+ num < 10 - return "small"
+ num < 15 - return "medium"
+ num < 20 - return "large"
+ num >= 20 - return "huge"
+*/
+
+/* 
+Golf Code
+*/
+
