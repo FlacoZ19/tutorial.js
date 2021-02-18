@@ -605,3 +605,139 @@
   }
 
   console.log(testEqual(10));
+
+  /*
+  Comparison with the
+  Strict Equality Operator 
+  */
+
+  function testStrict(valI){
+     if (valI){
+      return "Equal";
+     }
+     return "not equal";
+  }
+
+  testStrict(10); // validate if is a string
+
+  /* 
+  3 === 3 true
+  3 === '3' false is a number no string
+ */
+
+ /* 
+ Practice Comparing
+ Different Values
+ */
+
+ function compareEquality(){
+    if(a==b){ // Equals. No matter the diferent type data if the same
+      return "Equal";
+    }
+    return "Not equal";
+  } 
+  console.log(compareEquality(10, "10"));  
+
+  function compareEquality(){
+   if(a===b){ // No equals, metter the diferent type data between number and string 
+     return "Equal";
+   }
+   return "Not equal";
+ } 
+ console.log(compareEquality(10, "10"));   
+
+ /* 
+ Comparison with the 
+ Inequality Operator
+ */
+
+function testNotEquality(){
+   if(valII != 99){ // No equals, because 99 is diferent from 10
+     return "Equal";
+   }
+   return "Not equal";
+ } 
+ console.log(testNotEquality(10));   
+ 
+ /* 
+ Comparison with the 
+ Strict Inequality Operator
+ */
+
+function testStrictNotEqual(){
+   if(valIII !== 17){ //inequality operator=> !== not equal to 17
+     return "Not equal";
+   }
+   return "Equal";
+ } 
+ console.log(compareEquality(10));    
+
+/* 
+Comparisons with the
+Logical And Operator
+*/
+
+function testGreaterThan(){
+   if (valIV > 100) {
+      return "Over 100";
+   }
+   if(valIV > 10){
+      return "Over 10"
+   }
+   return "10 or under";
+}
+
+console.log(testGreaterThan(10));
+
+/* 
+Comparisons with the Greater
+than or Equal to Operator
+*/
+
+function testGreaterOrEqual(){
+   if (valIV >= 100) {
+      return "Over 100";
+   }
+   if(valIV >= 10){
+      return "Over 10"
+   }
+   return "Less than 10";
+}
+
+console.log(testGreaterOrEqual(10));
+
+
+/* 
+Comparisons with the 
+Less than Operator
+*/
+
+function testLessThan(){
+   if (valIV < 98) {
+      return "under 100";
+   }
+   if(valIV < 8){
+      return "under 10"
+   }
+   return "Less than 10";
+}
+
+console.log(testLessThan(10));
+
+/* 
+Comparisons with the Lees
+than or Equal to Operator
+*/
+
+function testLessEqual(){
+   if (valIV <= 98) {
+      return "Smaller than 100";
+   }
+   if(valIV <= 8){
+      return "Smaller than 10"
+   }
+   return "Less than 10";
+}
+
+console.log(testLessEqual(10));
+
