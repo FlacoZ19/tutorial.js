@@ -399,4 +399,99 @@
  */
 
  var ourArrayVIII = ["Stimpson","J",["cat"]];
- var removedFromMyArrayIX  
+ var removedFromOurArrayIX = ourArrayVIII.shift();
+ 
+ var myArrayX = [["George",23],["dog",5]]; // Deleted the fist part of the array
+ var removedFromOurArrayX = myArrayX.shift();
+ console.log(myArrayX);
+
+ /* 
+ Manipule Arrays
+ with unshift()
+ */
+
+ var ourArrayIX = ["Stimpson","J","cat"];
+ ourArrayIX.shift(); // ourArrayIX now equals ["J","cat"]
+ ourArrayIX.unshift("Happy"); 
+ // ourArray now equals ["Happy","J","cat"]
+
+ var myArrayXI = [["George",25],["dog",5]];
+ myArrayXI.shift();
+ myArrayXI.unshift(["Ivan",25]);
+ console.log(myArrayXI);
+
+ /*----------------Shopping List---------------------*/
+
+ var myList = [["cereal",3],["milk",2],["bananas",5],["juice",4],["eggs",6]];
+ console.log(myList);
+
+ /* 
+ Write Reusable Code
+ with Functions
+ */
+
+ function ourReusableFunction(){
+   console.log("Hey world");
+ }
+ ourReusableFunction();
+
+
+ /* 
+ Passing Values to
+ Funtions with Arguments
+ */
+
+ function ourFunctionWithArgs(a,b){
+   console.log(a-b);
+ }
+ ourFunctionWithArgs(10,5);
+
+ /* 
+ Global Scope
+ and Funtions
+ */
+
+ var myGlobal = 5;
+ 
+ function fun1(){
+   	oppsGlobal = 10;
+ }
+
+ function fun2(){
+    var output = "";
+    if(typeof myGlobal != "undefined"){ 
+      output += "myGlobal: " + myGlobal;
+    }
+    if(typeof oopsGlobal != "undefined"){
+       output += " oopsGlobal: " + oppsGlobal;
+    }
+    console.log(output);
+ }
+ fun1();
+ fun2();
+
+ /* 
+ Local Scope
+ and Functinos
+ */
+
+ function myLocalScope() {
+   var myVari = 5; 
+   console.log(myVari);
+ }
+
+ myLlocalScope();
+
+ /* 
+ Global vs. Local
+ Scope in Functions
+ */
+
+ var outerWear = "T-Shirt"; // it ejecute like a global varible 
+ function myOutfit(){
+   var outerWear = "T-Shirt"; // it ejecute like a local varible is over of global
+    return outerWear;
+ }
+ console.log(myOutfit()); // local inside of funtion
+ console.log(outerWear); // global
+ 
