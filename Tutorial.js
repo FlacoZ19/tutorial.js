@@ -425,6 +425,7 @@
  var myList = [["cereal",3],["milk",2],["bananas",5],["juice",4],["eggs",6]];
  console.log(myList);
 
+ /*--------------------------------Funtions(){}-----------------------------*/
  /* 
  Write Reusable Code
  with Functions
@@ -489,9 +490,118 @@
 
  var outerWear = "T-Shirt"; // it ejecute like a global varible 
  function myOutfit(){
-   var outerWear = "T-Shirt"; // it ejecute like a local varible is over of global
+   var outerWear = "Shirt"; // it ejecute like a local varible is over of global
     return outerWear;
  }
  console.log(myOutfit()); // local inside of funtion
  console.log(outerWear); // global
  
+
+ /* 
+ Return a Value from
+ a Funtion with Return
+ */
+
+ function minusSeven(num){
+    return num - 7;
+ }
+
+ console.log(minusSeven(10));
+
+ function timesFive(num){
+   return num * 5;
+ }
+
+ console.log(timesFive(5));
+
+ /* 
+ Understanding Undefined Value
+ Returned from a Function
+ */
+
+ var sum =0;
+ function addThree(){
+    sum = sum + 3   
+ }
+ function addFive(){
+    suma += 5;
+ }
+
+ /* 
+ Assignment with a 
+ Returned Value
+ */
+
+ var changed = 0;
+
+ function change(){
+    return (num+5)/3;
+ }
+
+ change = change(10);
+
+ var processed =0;
+
+ function processArg(){
+    return (num + 3) / 5;
+ }
+
+ processed = processArg(7);
+
+ /* 
+ Stand in Line
+ */
+
+ function nextInLine(arr, item){ 
+    arr.push(item);
+    return item;
+ }
+
+ var testArr = [1,2,3,4,5];
+
+ console.log("Before: " + JSON.stringify(restArr));
+ console.log(nextInLine(testArr, 6)); // add in the same line a number 6 in the array
+ console.log("After: " + JSON.stringify(testArr));
+
+ /* 
+ Boolean Values
+ */
+
+ function welcomeToBooleans(){ // the booleans return a function and valide it
+   return false;
+ }
+
+ /* 
+ Use Conditional Logic
+ with If Statements
+ */
+
+  function ourTrueOrFalse(isItTrue){
+     if(isItTrue){
+         return "Yes, it's true";
+     }
+     return "No, it's false";
+  }
+
+  function trueOrFlase(wasThatTrue){
+      if(wasThatTrue){
+         return "Yes, that was true";
+      }
+      return "No, that was true";
+  }
+
+  console.log(trueOrFlase(true));
+
+  /* 
+  Comparison with the 
+  Equality Operator
+  */
+
+  function testEqual(val){
+   if (val == 12) { //check if the value is the same in testEqual
+      return "Equal";
+   }
+   return "Not Equal";
+  }
+
+  console.log(testEqual(10));
