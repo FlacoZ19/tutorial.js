@@ -1,3 +1,9 @@
+ /*
+  * Apprentice: Jorge Cardona
+  * Tutor: FreeCampCode.Org
+  * References: https://www.youtube.com/watch?v=PkZNo7MFNFg&t=5768s&ab_channel=freeCodeCamp.org
+  */
+ 
  /* 
  //Data Type:
  //undefined, null, boolean, string, symbol, number and object
@@ -571,6 +577,7 @@
    return false;
  }
 
+ /*----------------------------Function if(Condition)---------------------------------*/
  /* 
  Use Conditional Logic
  with If Statements
@@ -858,4 +865,424 @@ Write chained if/else if statements to fulfill the following conditions
 /* 
 Golf Code
 */
+var names = ["Hole-in-one!", "Eagle"," Birdie"," Par"," Bogey"," Double Bogey","Go Home!"];
+function golfScore(par, strokes){
+   if (strokes == 1){
+      return names[0];
+   }else if (strokes <= par - 2){
+      return names[1];
+   }else if (strokes == par - 1){
+      return names[2];
+   }else if (strokes == par){
+      return names[3];
+   }else if (strokes == par + 1){
+      return names[4];
+   }else if (strokes == par + 2){
+      return names[5];
+   }else if (strokes >= + 1){
+      return names[6];
+   }
+
+   return "Change me";
+}
+
+//change for see a code line run in the console j.s
+console.log(golfScore(5,4));
+
+/* 
+Strokes  Return
+1           "Hole-in-one!"
+<= par -2   "Eagle"
+par - 1     "Birdie"
+par         "par"
+par + 1     "Bogey"
+par + 2     "Double Bogey"
+>= par +3   "Go home!"  
+*/
+
+/*------------------------------------Switch{}Statements-----------------------------------*/
+
+function caseInSwitch(val){
+   var answer  ="";
+   switch(val){
+      case 1:
+         answer = "alpha";
+         break;
+      case 2:
+         answer = "beta";
+         break;
+      case 3:
+         answer = "gama";
+         break;
+      case 4:
+         answer = "delta";
+         break;
+   }
+   return answer;
+}
+console.log(caseInSwitch(1)); //ejecute the number of case that is inside caseInSwitch(AnyNumber) (2) (3)...;
+ /* test val statement which tests val and sets answer for following conditions:
+ 1 - "alpha"
+ 2 - "beta"
+ 3 - "gama"
+ 4 - "delta"
+ */
+
+ /* 
+ Default Option in
+ Switch Statements
+ */
+
+function switchOfStuff(val){
+   var answer  ="";
+   switch(val){
+      case "a":
+         answer = "alpha";
+         break;
+      case "b":
+         answer = "beta";
+         break;
+      case "c":
+         answer = "gama";
+         break;
+      case "d":
+         answer = "delta";
+         break;
+      default:
+         answer = "forze";
+         break;
+   }
+   return answer;
+}
+console.log(switchOfStuff("a")); 
+
+/* 
+Multiple Identical Options
+in Switch Statements
+*/
+
+function sequentialSizes(vali){
+   var answer = "";
+   switch (vali) {
+      case 1:
+      case 2:
+      case 3:
+         answer = "Low";
+         break;
+      case 4:
+      case 5:
+      case 6:
+         answer = "Mid";
+         break;
+   
+      case 7:
+      case 8:
+      case 9:
+         answer = "High";
+         break;
+   }   
+   
+   return answer;
+}
+
+// Change this value to test 
+
+console.log(sequentialSizes(5));
+
+/* 
+Replacing If Else Chain
+with Switch  
+*/
+
+ var answer = "";
+
+ switch (valiu) {
+    case "Bob":
+       answer ="Marley";
+       break;
+    case 42:
+       answer = "The answer";
+       break;
+    case 1:
+       answer = "ther is #1";
+       break;   
+    case 99:
+      answer = "Missed me by this much!";
+       break;
+    case 7:
+       answer = "Days";
+       break;
+
+    default:
+       answer = "Eres un pendejo";
+       break;
+ }
+
+ /* 
+ Returning Boolean Values 
+ from Functions
+ */
+
+ function isLess(a,b) {
+    return a < b;
+ }
+
+ console.log(isLess(10,15));
+
+ /* 
+ Returning Early Pattern 
+ from Functions
+ */
+
+ function abTest(a,b){
+   if(a < 0 || b < 0){
+      return undefined;
+   }
+   
+   return Math.round(Math.pow(Math.sqrt(a) + Math.sqrt(b), 2))
+ }
+
+console.log(abTest(2,2));
+
+/* 
+Counting 
+Cards
+*/
+
+var count = 0;
+
+function cc(card){
+   switch(card){
+      case 2:
+      case 3:
+      case 4:
+      case 5:
+      case 6:
+         count++;
+         break;
+      case 10:
+      case "J":
+      case "Q":
+      case "K":
+      case "A":
+         count--;
+         break;                     
+   }
+
+   var holdbet = "Hold";
+   if (count > 0) {
+      holdbet = "bet"
+   } 
+   return count + " " + holdbet;
+}
+cc(2); cc(3); cc(7); cc('K'); cc('A');
+console.log(cc(4));
+
+/*-------------------------------------------Objects J.S---------------------------------------------*/
+/* 
+Build
+JavaScript Objects
+*/
+ //Example
+
+ var ourDog = {
+   "name" : "Orion",
+   "legs": 4,
+   "tails": 1,
+   "friends" : ["everything!"]
+
+ };
+
+ var myCat = {
+   "name" : "Ganesh",
+   "legs" : 4,
+   "tails" : 1,
+   "friends" : ["Forever"]
+
+
+ };
+
+ /* 
+ Accessing Object Properties
+ with Dot Notation
+ */
+
+ var testObj = {
+    "hat" : "ballcap",
+    "shirt" : "jersey",
+    "shoes" : "cleats"
+ };
+
+ var hatValue = testObj.hat; // get the property of object that is requery
+ var shirtValue = testObj.shirt;
+ var shoesValue = testObj.shoes;
+
+ /* 
+ Accessing Object Propeties
+ with Bracket Notation
+ */
+
+var testObj = {
+   "hat" : "ballcap",
+   "shirt" : "jersey",
+   "shoes" : "cleats"
+};
+
+var hatValue = testObj['hat']; // get the property of object that is requery into the []
+var shirtValue = testObj['shoes'];
+
+/* 
+Accessing Object Propeties 
+with Variables
+*/
+
+var testObject = {
+   12: "Namath",
+   16: "Montana",
+   19: "Unitas"
+};
+
+var playerNumber = 16;
+var player = testObject[playerNumber];
+
+/* 
+Updating
+Object Properties
+*/
+
+var ourDog = {
+   "name" : "Orion",
+   "legs": 4,
+   "tails": 1,
+   "friends" : ["everything!"]
+ };
+
+ var myCat = {
+   "name" : "Ganesh",
+   "legs" : 4,
+   "tails" : 1,
+   "friends" : ["Forever"]
+ };
+
+ myCat.name = "Ganesha"; // Update the new name in the property name of the object myCat
+
+ /* 
+ Add new Property
+ to an Object
+ */
+
+var ourDog = {
+   "name" : "Orion",
+   "legs": 4,
+   "tails": 1,
+   "friends" : ["everything!"]
+};
+
+ourDog.Color ="Black"; // You can add a new property to object already created 
+ourDog['Bark'] = "Woof!";
+
+/* 
+Delete Property 
+from an Object
+*/
+
+var ourDog = {
+   "name" : "Orion",
+   "legs": 4,
+   "tails": 1,
+   "friends" : ["everything!"]
+};
+
+delete ourDog.Bark;
+
+/*
+Using Objects
+for Lookups
+*/
+
+function phoneticLookup(val){
+   var result = "";
+
+   var lookup = {
+      "alpha": "Adams",
+      "bravo": "Boston",
+      "charlei": "Chicago",
+      "delta": "Denver",
+      "echo": "Easy",
+      "foxtrot" : "Frank"
+   };
+   result = lookup[val];
+   return result;
+}
+console.log(phoneticLookup("charlei"));
+   /*  
+   switch (val) {
+      case "alpha":
+         result = "Adams";
+         break;
+      case "bravo":
+         result = "Boston";
+         break;
+      case "charlei":
+         result = "Chicago";
+         break;
+      case "delta":
+         result = "Dever";
+         break;
+      case "echo":
+         result = "Easy"
+         break;
+      case "foxtrot":
+         result = "Frank";
+         break;
+      default:
+         break;
+   } */
+
+/*
+Testing Objects
+for Properties
+*/
+
+var myObj = {
+   gitf: "Moto",
+   pet: "Dog",
+   bed: "sleigh"
+};
+
+ function checkObj(checkProp){
+    if (myObj.hasOwnProperty(checkProp)){
+      return myObj[checkProp];
+   }else {
+      return "Not found";
+   }
+ }
+ console.log(checkObj("gift"));
+
+ /* 
+Manipulating
+Complex Objects
+ */
+
+var myMusic = [
+   {
+      "artist" : "Billy Joel", 
+      "tittle" : "Piano Man",
+      "release_year": 1973,
+      "formats" : [
+         "CD",
+         "8T",
+         "LP"
+      ],
+      "gold": true
+   },
+   {
+      "artist" : "Beau Carnes", // Create an other array list of new artist in the Object myMusic
+      "tittle" : "Cereal Man",
+      "release_year": 2003,
+      "formats" : [
+         "Youtube Video"
+      ]
+   }
+];
 
