@@ -1380,13 +1380,14 @@ function updateRecords(id, prop, value){
 updateRecords(1245,"tracks","test");
 console.log(updateRecords(5439,"artits", "ABBA"));
 
+/*---------------------------------------------------------------------------------------------------------------------*/
+
+/*-----------------------While Loops----------------------*/
 
 /* 
 Iterate with
 While Loops
-*/
-
-/*-----------------------While Loops----------------------*/
+*/ 
 
 var myArrayXI = [];
 var i = 0;
@@ -1397,12 +1398,12 @@ while(i <= 5){
 
 console.log(myArrayXI);
 
+/*--------------------------For Loops----------------------*/
+
 /* 
 Iterate with
 For Loops
 */
-
-/*--------------------------For Loops----------------------*/
 
 var ourArrayX = [];
 
@@ -1411,3 +1412,196 @@ for(var i = 0; i <= 5; i++){
 }
 
 console.log(ourArrayX);
+
+
+/* 
+Iterate Odd Numbers
+with a For Loops
+*/
+
+var ourArrayXI = [];
+
+for(var i = 0; i<=10; i+=2){
+   ourArrayXI.push(i);
+}
+console.log(ourArrayXI);
+
+/* 
+Count Backwards
+with a For Loop
+*/
+
+var ourArrayXII = [];
+
+for(var i = 10; i>0; i -=2){
+   ourArrayXII.push(i);
+}
+console.log(ourArrayXII);
+
+/*
+Iterate Through an Array
+with a For Loop
+*/
+
+var ourArrayXIII = [9, 10, 11, 12];
+var ourTotal=0;
+
+for (var i=0; i < ourArrayXIII.length; i++){
+   ourTotal += ourArrayXIII[i];
+}
+console.log(ourTotal);
+
+/*
+Nesting
+For Loops 
+*/
+
+function multiplyAll(arr){
+   var prod = 1
+   for(var i=0; i < arr.length; i++){
+      for(var j=0; j < arr[i].length; j++){
+         prod *= [i][j]
+      }
+   }
+      
+   return prod;
+
+}
+
+var prod = multiplyAll([[1,2],[3,4],[5,6,7]]);
+console.log(prod);
+
+/* 
+Interate with
+Do... While Loops
+*/
+
+var myArrayXII = [];
+var i =10;
+
+do{
+   myArrayXII.push(i);
+   i++;
+}while(i<5)
+
+console.log(i, myArrayXII);
+
+/* 
+Profile
+Lookup
+*/
+
+var contacts = [
+   {
+      "firstName" : "Akira",
+      "lastName" : "Laine",
+      "number" : "0543236563",
+      "likes" : ["Pizza","Coding", "Brownie Points"]
+   },
+   {
+      "firstName" : "Harry",
+      "lastName" : "Potter",
+      "number" : "0994372684",
+      "likes" : ["Howarts","Magic", "Hagrid"]
+   },
+   {
+      "firstName" : "Sherlock",
+      "lastName" : "Holmes",
+      "number" : "0487345643",
+      "likes" : ["Intriguing Case", "Violin"]
+   },
+   {
+      "firstName" : "Kristian",
+      "lastName" : "Vos",
+      "number" : "unknown",
+      "likes" : ["JavaScript", "Gaming", "Foxes"]  
+   }
+];
+
+function lookUpProfile(name, prop){
+   for (var i = 0; i < contacts.length; i++){
+      if(contacts[i].firstName === name){
+         return contacts[i][prop] || "No such property";
+      }
+   }
+   return "No such contact";
+}
+
+var data = lookUpProfile("Akira","likes");
+console.log(data); 
+
+/* 
+Generate Random
+Fractions
+*/
+
+function randomFraction(){
+   return Math.random();
+}
+
+console.log(randomFraction());
+
+/* 
+Generate Random
+Whole Numbers
+*/
+
+var randomNumberBetween0and19 = Math.floor(Math.random()*20);
+function randomWholeNum(){
+   return Math.random(Math.random()*10);
+}
+
+console.log(randomWholeNum());
+
+/* 
+Generate Random Whole
+Numbers within a Range
+*/
+
+function ourRandomRange(ourMin, ourMax){
+   return Math.floor(Math.random() * (ourMax - ourMin + 1))+ourMin;
+}
+
+ourRandomRange(1,9);
+
+function randomRange(){
+   return Math.floor(Math.random() * (myMax - myMin + 1))+ myMin;  
+}
+
+var myRandom = randomRange (5,15);
+console.log(myRandom);
+
+/* 
+Use the
+parseInt Function
+*/
+
+function convertToInteger(str){
+   return parseInt(str);
+}
+
+convertToInteger("56");
+
+/* 
+Use the parseInt Function
+with a Radix
+*/
+
+function convertToInteger(){
+   return parseInt(str,2)
+}
+
+convertToInteger("10011");
+
+
+/* 
+Use the Conditional
+(Ternary) Operator
+*/
+
+function checkEqual(a,b){
+   return a === b ? true : false;
+   return a === b;
+}
+
+checkEqual(1,2);
