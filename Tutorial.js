@@ -1286,3 +1286,128 @@ var myMusic = [
    }
 ];
 
+/* 
+Accessing
+Nested Objects
+*/
+
+var myStorage = {
+   "car": {
+      "inside": {
+         "glove box" : "maps",
+         "passenger seat": "crumbs"
+      },
+      "outside":{
+         "trunk" : "jack"
+      }
+   }
+};
+
+var gloveBoxContents = myStorage.car.inside["glove box"];
+console.log(gloveBoxContents);
+
+/* 
+Accessing 
+Nested Arrays
+*/
+
+var myPlants = [
+   {
+      type : "flowers",
+      list: [
+         "rose",
+         "tulip",
+         "girasol"
+      ]
+   },
+   {
+      type: "trees",
+      list: [
+         "fir",
+         "pine",
+         "birch"         
+      ]
+   }
+];
+
+var secondTree = myPlants [1].list[1]; 
+
+/* 
+Record
+Collection
+*/
+
+var Collection = {
+   "2548": {
+      "album": "Slippery When Wet",
+      "artist": "Bon Jovi",
+      "tracks":[
+         "Let it Rock",
+         "You give Love a bad name"
+      ]
+   },
+   "2468": {
+      "album" : "1999",
+      "artist": "Prince",
+      "tracks": [
+         "1999",
+         "Little red Corvette"
+      ]
+   },
+   "1245": {
+      "artist": "Robert Palmer",
+      "tracks": []
+   },
+   "5439" : {
+      "album": "ABBA Gold"
+   }
+};
+
+var CollectionCopy = JSON.parse(JSON.stringify(Collection));
+
+function updateRecords(id, prop, value){
+   if (value === ""){
+      delete Collection[id][prop];
+   }else if (prop === "tracks"){
+      Collection[id][prop] = Collection[id][prop] || [];// if this already exists array so if this already exicts we're gonna set to equal itself but if itself doesn't exist we'll just set it to equal and empety array
+      Collection[id][prop].push(value); // update the new properties inside in the [id] that I've select to Collection
+   }else {
+      Collection [id][prop] = value;
+   }
+   return Collection; 
+}
+
+updateRecords(1245,"tracks","test");
+console.log(updateRecords(5439,"artits", "ABBA"));
+
+
+/* 
+Iterate with
+While Loops
+*/
+
+/*-----------------------While Loops----------------------*/
+
+var myArrayXI = [];
+var i = 0;
+while(i <= 5){
+   myArrayXI.push(i);
+   i++;
+}
+
+console.log(myArrayXI);
+
+/* 
+Iterate with
+For Loops
+*/
+
+/*--------------------------For Loops----------------------*/
+
+var ourArrayX = [];
+
+for(var i = 0; i <= 5; i++){
+   ourArrayX.push(i);
+}
+
+console.log(ourArrayX);
