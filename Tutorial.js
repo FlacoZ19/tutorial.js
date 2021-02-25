@@ -1605,3 +1605,190 @@ function checkEqual(a,b){
 }
 
 checkEqual(1,2);
+
+
+/* 
+Use Multiple Conditional
+(Ternary) Operators
+*/
+
+
+function chechSign(num){
+   return num > 0 ? "Positive" : num < 0 ? "Negative" : "zero"
+}
+
+chechSign(10);
+
+
+/* 
+Differences Between
+the var and let Keywords
+*/
+
+var catName = "Quincy"; // Let get declared once time no more
+var quote;
+
+var catName = "Beau";
+
+function catTalk(){
+   "use strict";
+
+   catName = "Ganesh";
+   quote = catName + " says meow";
+
+}
+
+catTalk();
+
+/* 
+Compare Scopes of
+the var and let Keywords
+*/
+
+function checkScope(){
+   "use strict";
+   var i = "function scope";
+   if(true){
+      i = "block scope";
+      console.log("Block scope i is: ",i);
+   }
+   console.log("Function scope i is: ",i);
+   return i;
+}
+
+checkScope();
+
+
+/* 
+Declare a Read-Only variable
+with the const Keyword
+*/
+
+ function printManyTimes(str){
+    "use strict";
+
+    const SENTENCE = str + " is cool!";
+
+    for(let i = 0; i < str.length; i+=2){
+      console.log(SENTENCE);
+    }
+
+ }
+ printManyTimes("freeCodeCamp");
+
+
+ /* 
+ Mutate an Array
+ Declared with const
+ */
+
+ const s = [5,7,2]; // protect your data from mutation 
+ function editInPlane(){
+    "use strict";
+
+    s[0]=2;
+    s[1]=5;
+    s[2]=7;
+ }
+
+ editInPlane();
+ console.log(s);
+
+
+ /*
+Prevent
+Object Mutation
+ */
+function freezeObj(){
+
+   const MATH_CONSTANTS = {
+      PI: 3.1416
+   };
+
+   Object.freeze(MATH_CONSTANTS); // Use if you don't want any of items in the object to change 
+
+   try{ // we can change the array if delete the Object.freeze 
+      MATH_CONSTANTS.PI = 99;
+   }catch (ex){
+   console.log(ex);
+   }
+   return MATH_CONSTANTS.PI;
+}
+ 
+const PI = freezeObj();
+
+
+/* 
+Use Arrow Functions to Write
+Concise Anonymous Functions
+*/
+
+const magic = () => new Date();
+
+
+/* 
+Write Arrow Functions
+with Parameters
+*/
+
+const myConcat = (arr1, arr2) => arr1.contacts(arra2); 
+
+console.log(myConcat([1,2],[3,4,5]));
+
+
+/* 
+Write Higher Order
+Arrow Functions
+*/
+
+const realNumberArray = [4, 5.6, -9.8, 3.14, 42, 6, 8.34, -2];
+
+const squareList = (arr) => {
+   const squaredIntegers = arr.filter(num => Number.isInteger(num) && num > 0).map(x => x * x);
+   return squaredIntegers;
+};
+
+const squaredIntegers = squareList(realNumberArray);
+console.log(squaredIntegers);
+
+
+/* 
+Write Higher Order
+Arrow Functions
+*/
+
+const increment = (function(){
+   return function increment(number, value = 1){
+      return number + value;
+   };
+}());
+
+console.log(increment(5,2));
+console.log(increment(5));
+
+
+/* 
+Use the Rest Operator
+with Function Parameters
+*/
+
+const sum = (function(){
+   return function sum(...args){ //we can have any numbers of arguments what do you want
+      return args.reduce((a, b) => a+b + 0);
+   };
+}());
+
+
+/* 
+Use the Spread Operator
+to Evaluate Arrays In-Place
+*/
+
+const arr1 = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'];
+let arr2;
+
+(function (){
+   arr2 = [...arr1];
+   arr1[0] = 'potato'
+})();
+console.log(arr2);
