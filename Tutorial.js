@@ -1792,3 +1792,230 @@ let arr2;
    arr1[0] = 'potato'
 })();
 console.log(arr2);
+
+
+/* 
+Use Destructuring Assigment 
+to Assign Variables from Objects
+*/ 
+
+var voxel = {x:3.6, y:7.4, z:6.54};
+
+var x = voxel.x;
+var y = voxel.y;
+var z = voxel.z;
+
+const {x:a, y:b, z:c}= voxel;
+
+const AVG_TEMPERATURES = {
+   today: 77.5,
+   tomorrow: 79
+};
+
+function getTempOfTmrw(avgTemperatures){
+   "use strict";
+   const { tomorrow : TempOfTomorrow } = avgTemperatures;
+   return TempOfTomorrow;
+}
+
+console.log(getTempOfTmrw(AVG_TEMPERATURES)); // should be 79
+
+
+/* 
+Destructuring Assigment
+with Nested Objects
+*/
+
+const LOCAL_FORESCAST = {
+   today : {min:72 , max: 83 },
+   tomorrow : {min:73.3, max:84.6}
+};
+function getMAxOfTmrw(forecast){
+   "use strict";
+   const  { tomorrow: {max : maxOfTomorrow}} = forecast;
+   return maxOfTomorrow;
+}
+
+console.log(getMAxOfTmrw(LOCAL_FORESCAST));
+
+
+/* 
+Use Destructuring Assigment
+to Assign Variable from Arrays
+*/
+
+const [z,x, ,y] = [1,2,3,4,5,6];//2. if we wnated number 4 to be going to a variable, just add some commas  example: We have the first element the second element, we skip the tird element and then we have a four element
+console.log(z,x,y);
+
+let a = 8, b = 5; //1. dustrututing from objects is that you cannot specify which element from the array to go into a varibale just goes in order 
+(() => { 
+   "use strict";
+   [a, b] = [b, a]
+})();
+console.log(a);
+console.log(b);
+
+
+/* 
+Use Destruturing Assigment
+with the Rest Operator
+*/
+
+const source = [1,2,3,4,5,6,7,8,9,10];
+function removeFirstTwo(list){
+   const [ , , ...arr] = list;
+   return arr;
+}
+const arr = removeFirstTwo(source);
+console.log(arr);
+console.log(source);
+
+
+/* 
+Use Destructuring Assigment
+to Pass an Object as a
+Function's Parameters
+*/
+
+const stats = {
+   max: 56.78,
+   standard_deviation: 4.34,
+   median: 34.54,
+   mode: 23.87,
+   min: -0.75,
+   average: 35.85
+};
+
+const half = (function(){
+   return function half({max,min}){
+      return (max + min) / 2.0;
+   };
+})();
+
+console.log(stats);
+console.log(half(stats));
+
+
+/* 
+Create Strings using 
+Template Literals
+*/
+
+const person = {
+   name: "Zodiac Hasbro",
+   age: 56
+};
+
+const greeting = `Hello, my name is ${person.name} !
+I am ${person.age} years old.`;
+
+console.log(greeting);
+
+const result = {
+   success: ["max-lengt", "no-amd", "prefer-arrow-functions"],
+   failure: ["no-var", "var-on-top", "linebreak"],
+   skipped: ["id-blacklist", "no-dup-key"]
+}; 
+function makeList(arr){
+   const resultDisplayArray = [];
+   for (let i = 0; i < arr.length; i++){
+      resultDisplayArray.push(`<li class="text-warning">${arr[i]}</li>`)
+   }
+   return resultDisplayArray;
+}
+
+const resultDisplayArray = makeLsit(result.failure);
+console.log(resultDisplayArray);
+
+
+/* 
+Write Concise Object Literal
+Declarations Using Simple Fields
+*/
+
+const createPerson = (name, age, gender) => ({name, age, gender}); //Another way to show an object and onws characters
+console.log(createPerson("Zodiac Hasbro", 56, "male"));
+
+/* 
+Write Concise
+Declarative Functions
+*/
+
+const bicycle = {
+   gear: 2,
+   setGear (newGear) { // object can have a function inside like that
+      "use strict";
+      this.gear = newGear;
+   }
+};
+
+bicycle.setGear(3);
+console.log(bicycle.gear);
+
+
+/* 
+Use class Syntaxys to 
+Define a Constructor Function
+*/
+
+function makeClass(){
+   class Vegetable {
+      constructor(name){
+         this.name= name
+      }
+   }
+   return Vegetable;
+}
+
+const Vegetable = makeClass();
+const carrot = new Vegetable('carrot');
+console.log(carrot.name);
+
+
+/* 
+Use getters and setters to 
+Control Access to an Object
+*/
+
+class Book { //example
+   constructor(author){
+      this.author = author;
+   }
+   //Getter
+   get writer(){
+      return this._author
+   }
+   //Setter
+   set writer(updatedAuthor){
+      this._author = updatedAuthor;
+   }
+}
+
+function makeClass(){
+   class Thermostat{
+      constructor(temp){
+         this._temp = 5/9 * (temp - 32);
+      }
+      get temperature(){
+         return this._temp
+      }
+      set temperature(updatedTemp){
+         this._temp = updateTemp;
+      }
+   }
+   return Thermostat;
+}
+
+const Thermostat = makeClass();
+const thermos = new Thermostat(76);
+let temp = thermos.temperature;
+thermos.temperature = 26;
+temp = thermos.temperature;
+console.log(temp);
+ 
+
+/* 
+Understand the Differences
+Between import and require
+*/
+
