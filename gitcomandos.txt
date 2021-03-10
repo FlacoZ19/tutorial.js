@@ -52,6 +52,6 @@ git status
 
 create a new reposistory (public) and copy the line that has the name of the new reposistory and paste like that
 
-git remote add origin https://github.com/FlacoZ19/tutorial.js.git
+git remote add origin https://github.com/FlacoZ19/.git     working =>   https://github.com/FlacoZ19/tutorial.js.git
 
 git push -u origin master

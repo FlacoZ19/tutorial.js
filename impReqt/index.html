@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<head>
+    <meta>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+</head>
+
+<body>
+    <div class ="container">
+        <div class="jumbotron" style="width:90%; height: 80%; padding:15%; margin: 5%; text-align: center;">
+            <h1>Diferences between <hr> import and require</h1>
+        </div>
+    </div> 
+    <div class="container" style="width:90%; height: 80%; padding:1%; margin: 0.5%; text-align: center;">
+        <h2>Button States</h2>
+        <button type="button" class="btn btn-primary Active">Go to Code</button>
+        
+        <button type="button" class="btn btn-primary" onclick="trueOrFlase()"> Active Code</button>
+            <script>
+                function trueOrFlase(onclick){
+                   if(onclick){
+                        return "Yes, that was true";
+                   }
+                   return "No, that was true";
+                }
+               console.log(trueOrFlase(onclick));
+           </script>
+        <button type="button" class="btn btn-primary disabled">Disabled Primary</button>
+    </div>
+    
+</body>

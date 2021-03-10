@@ -2017,5 +2017,6 @@ console.log(temp);
 /* 
 Understand the Differences
 Between import and require
+=>(dir:[impReqt]) all files related 
 */
 
